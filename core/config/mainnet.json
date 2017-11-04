@@ -1,0 +1,118 @@
+{
+    "identity": "mainnet",
+    "name": "Nowon mainnet",
+    "network": 125,
+    "consensus": "ethash",
+    "genesis": {
+        "timestamp": "",
+        "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "nonce": "0x00006d6f7264656e",
+	"extraData": "",
+        "gasLimit": "0x2FEFD8",
+        "difficulty": "0x020000",
+        "mixhash": "0x00000000000000000000000000000000000000647572616c65787365646c6578",
+        "coinbase": "0x0000000000000000000000000000000000000000",
+        "alloc": {
+            "7d0a374a3ac2ecf5bb7901a67c0e95873d6b8267": {
+                "balance": "1000000000000000000000000000"
+            }
+        }
+    },
+    "chainConfig": {
+        "forks": [
+		{
+                "name": "Homestead",
+                "block": 494000,
+                "requiredHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "features": [
+                    {
+                        "id": "difficulty",
+                        "options": {
+                            "type": "homestead"
+                        }
+                    },
+                    {
+                        "id": "gastable",
+                        "options": {
+                            "type": "homestead"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "GasReprice",
+                "block": 1783000,
+                "requiredHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "features": [
+                    {
+                        "id": "gastable",
+                        "options": {
+                            "type": "eip150"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "The DAO Hard Fork",
+                "block": 1885000,
+                "requiredHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "features": []
+            },
+            {
+                "name": "Diehard",
+                "block": 1915000,
+                "requiredHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "features": [
+                    {
+                        "id": "eip155",
+                        "options": {
+                            "chainID": 62
+                        }
+                    },
+                    {
+                        "id": "gastable",
+                        "options": {
+                            "type": "eip160"
+                        }
+                    },
+                    {
+                        "id": "difficulty",
+                        "options": {
+                            "length": 2000000,
+                            "type": "ecip1010"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Gotham",
+                "block": 2000000,
+                "requiredHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "features": [
+                    {
+                        "id": "reward",
+                        "options": {
+                            "era": 2000000,
+                            "type": "ecip1017"
+                        }
+                    }
+                ]
+            }
+        ],
+        "badHashes": [
+            {
+                "Block": 383792,
+                "Hash": "0x9690db54968a760704d99b8118bf79d565711669cefad24b51b5b1013d827808"
+            },
+            {
+                "Block": 1915277,
+                "Hash": "0x3bef9997340acebc85b84948d849ceeff74384ddf512a20676d424e972a3c3c4"
+            }
+        ]
+
+    },
+    "bootstrap": [
+	"enode:////bb4ede6faadc19749e9119bcb8c487e10c2651ffa0a4aaf62e89431d133cc12d9bb8ba3858a10fd9f2e0f961b8db447ff8d2eaa2f962014729ebcff86f8f8d7f@35.177.9.156:30303"
+    ]
+}
+

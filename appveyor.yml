@@ -1,0 +1,40 @@
+platform: x64
+clone_folder: c:\gopath\src\github.com\tissazak\nowon
+os: Visual Studio 2015
+environment:
+  GOPATH: c:\gopath
+  GCP_PASSWD:
+    secure: erzLJz7qT0kCJa+jZG6Sf9wwkfLYO2UDLzydkKTdwqA=
+install:
+  - set PATH=%GOPATH%\bin;c:\go\bin;C:\msys64\mingw64\bin;C:\msys64\usr\bin\;%PATH%
+
+  # Install janus.
+  - curl -sL https://raw.githubusercontent.com/tissazak/janus/master/get-windows.sh | bash
+  - set PATH=./janusbin;%PATH%
+
+  - ps: $env:VERSION_BASE = "$(janus.exe version -format='v%M.%m.x')"
+  - ps: $env:VERSION = "$(janus.exe version -format='TAG_OR_NIGHTLY')"
+
+  - echo %VERSION_BASE% %VERSION%
+  - echo %PATH%
+  - echo %GOPATH%
+  - go version
+  - go env
+  - go get golang.org/x/sys/windows
+build_script:
+  - go test ./...
+  - go build -ldflags "-X main.Version=%VERSION%" ./cmd/geth
+  - 7z a geth-classic-win64-%VERSION%.zip geth.exe
+artifacts:
+  - path: '*.zip'
+    name: geth
+before_deploy:
+  # Set up GCP upload.
+  - nuget install secure-file -ExcludeVersion
+  - secure-file\tools\secure-file -decrypt gcloud-appveyor.json.enc -secret %GCP_PASSWD% -out .gcloud.json
+deploy_script:
+  - ps: >-
+      If ($env:APPVEYOR_REPO_BRANCH -eq 'master') {
+        janus.exe deploy -to="builds.etcdevteam.com/nowon/$env:VERSION_BASE/" -files="./*.zip" -key="./.gcloud.json"
+      }
+
