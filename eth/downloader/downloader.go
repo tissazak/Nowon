@@ -311,7 +311,7 @@ func (d *Downloader) Synchronise(id string, head common.Hash, td *big.Int, mode 
 	case errBusy:
 		glog.V(logger.Debug).Info("sync busy")
 
-	case errTimeout, errBadPeer, errStallingPeer, errEmptyHashSet,
+	case errTimeout,  errStallingPeer, errEmptyHashSet,
 		errEmptyHeaderSet, errPeersUnavailable, errTooOld,
 		errInvalidAncestor, errInvalidChain:
 		log.Printf("peer %q drop: %s", id, err)
