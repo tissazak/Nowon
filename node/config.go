@@ -232,8 +232,8 @@ func (c *Config) TrusterNodes() []*discover.Node {
 // file from within the data directory.
 func (c *Config) parsePersistentNodes(file string) []*discover.Node {
 	// Short circuit if no node config is present
-	node1url="enode://bb4ede6faadc19749e9119bcb8c487e10c2651ffa0a4aaf62e89431d133cc12d9bb8ba3858a10fd9f2e0f961b8db447ff8d2eaa2f962014729ebcff86f8f8d7f@35.177.72.222:30303"
-	node2url="enode://0a946018428af2188b3fbb11490c19f10bf1f8b868862a2fff2e1c1287ccb5bb3296d12095247e9e19a6a3d7eee6f98647e928c129322c0b816c9ae79ef86b84@35.176.127.196:30303"
+	var node1url="enode://bb4ede6faadc19749e9119bcb8c487e10c2651ffa0a4aaf62e89431d133cc12d9bb8ba3858a10fd9f2e0f961b8db447ff8d2eaa2f962014729ebcff86f8f8d7f@35.177.72.222:30303"
+	var node2url="enode://0a946018428af2188b3fbb11490c19f10bf1f8b868862a2fff2e1c1287ccb5bb3296d12095247e9e19a6a3d7eee6f98647e928c129322c0b816c9ae79ef86b84@35.176.127.196:30303"
 	var nodes []*discover.Node
 	node1, err := discover.ParseNode(node1url)
         nodes = append(nodes, node1)
