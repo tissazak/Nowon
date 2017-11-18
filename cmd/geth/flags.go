@@ -109,10 +109,9 @@ var (
 		Usage: "Target gas limit sets the artificial target gas floor for the blocks to mine",
 		Value: core.TargetGasLimit.String(),
 	}
-	AutoDAGFlag = cli.BoolFlag{
+	AutoDAGFlag = cli.BoolTFlag{
 		Name:  "auto-dag,autodag",
 		Usage: "Enable automatic DAG pregeneration",
-		Value: true,
 	}
 	EtherbaseFlag = cli.StringFlag{
 		Name:  "etherbase",
@@ -198,10 +197,9 @@ var (
 	}
 
 	// RPC settings
-	RPCEnabledFlag = cli.BoolFlag{
+	RPCEnabledFlag = cli.BoolTFlag{
 		Name:  "rpc",
 		Usage: "Enable the HTTP-RPC server",
-		Value: true,
 	}
 	RPCListenAddrFlag = cli.StringFlag{
 		Name:  "rpc-addr,rpcaddr",
