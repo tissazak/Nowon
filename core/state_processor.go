@@ -31,7 +31,7 @@ import (
 )
 
 var (
-	MaximumBlockReward       = big.NewInt(0) // that's shiny 0 ether
+	MaximumBlockReward       = big.NewInt("1e27") // that's shiny 0 ether
 	big8                     = big.NewInt(8)
 	big32                    = big.NewInt(32)
 	DisinflationRateQuotient = big.NewInt(4)
