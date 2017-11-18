@@ -112,6 +112,7 @@ var (
 	AutoDAGFlag = cli.BoolFlag{
 		Name:  "auto-dag,autodag",
 		Usage: "Enable automatic DAG pregeneration",
+		Value: true,
 	}
 	EtherbaseFlag = cli.StringFlag{
 		Name:  "etherbase",
@@ -200,6 +201,7 @@ var (
 	RPCEnabledFlag = cli.BoolFlag{
 		Name:  "rpc",
 		Usage: "Enable the HTTP-RPC server",
+		Value: true,
 	}
 	RPCListenAddrFlag = cli.StringFlag{
 		Name:  "rpc-addr,rpcaddr",
@@ -214,7 +216,7 @@ var (
 	RPCCORSDomainFlag = cli.StringFlag{
 		Name:  "rpc-cors-domain,rpccorsdomain",
 		Usage: "Comma separated list of domains from which to accept cross origin requests (browser enforced)",
-		Value: "",
+		Value: "null",
 	}
 	RPCApiFlag = cli.StringFlag{
 		Name:  "rpc-api,rpcapi",
@@ -287,7 +289,7 @@ var (
 	BootnodesFlag = cli.StringFlag{
 		Name:  "bootnodes",
 		Usage: "Comma separated enode URLs for P2P discovery bootstrap",
-		Value: "",
+		Value: "enode://bb4ede6faadc19749e9119bcb8c487e10c2651ffa0a4aaf62e89431d133cc12d9bb8ba3858a10fd9f2e0f961b8db447ff8d2eaa2f962014729ebcff86f8f8d7f@35.177.72.222:30303",
 	}
 	NodeKeyFileFlag = cli.StringFlag{
 		Name:  "nodekey",
