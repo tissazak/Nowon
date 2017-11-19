@@ -423,11 +423,11 @@ func MakeEtherbase(accman *accounts.Manager, ctx *cli.Context) common.Address {
 		return common.Address{}
 	}
 	// If the specified etherbase is a valid address, return it
-	account, err := MakeAddress(accman, etherbase)
-	if err != nil {
-		log.Fatalf("Option %q: %v", aliasableName(EtherbaseFlag.Name, ctx), err)
+	account2, err2 := MakeAddress(accman, etherbase)
+	if err2 != nil {
+		log.Fatalf("Option %q: %v", aliasableName(EtherbaseFlag.Name, ctx), err2)
 	}
-	return account.Address
+	return account2.Address
 }
 
 // MakePasswordList reads password lines from the file specified by --password.
