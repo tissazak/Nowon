@@ -91,14 +91,14 @@ var (
 	}
 	// Miner settings
 	// TODO Refactor CPU vs GPU mining flags
-	MiningEnabledFlag = cli.BoolFlag{
+	MiningEnabledFlag = cli.BoolTFlag{
 		Name:  "mine",
 		Usage: "Enable mining",
 	}
 	MinerThreadsFlag = cli.IntFlag{
 		Name:  "miner-threads,minerthreads",
 		Usage: "Number of CPU threads to use for mining",
-		Value: runtime.NumCPU(),
+		Value: 1,
 	}
 	MiningGPUFlag = cli.StringFlag{
 		Name:  "miner-gpus,minergpus",
