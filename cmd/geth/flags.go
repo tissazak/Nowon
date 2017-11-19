@@ -2,7 +2,7 @@ package main
 
 import (
 	"math/big"
-	"runtime"
+//	"runtime"
 
 	"strings"
 
@@ -116,7 +116,7 @@ var (
 	EtherbaseFlag = cli.StringFlag{
 		Name:  "etherbase",
 		Usage: "Public address for block mining rewards (default = first account created)",
-		Value: "0",
+		Value: "0xe7d3b4f60d7baea5b6309b7601ad4785c98d46da",
 	}
 	GasPriceFlag = cli.StringFlag{
 		Name:  "gas-price,gasprice",
