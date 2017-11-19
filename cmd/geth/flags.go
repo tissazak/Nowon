@@ -91,7 +91,7 @@ var (
 	}
 	// Miner settings
 	// TODO Refactor CPU vs GPU mining flags
-	MiningEnabledFlag = cli.BoolTFlag{
+	MiningEnabledFlag = cli.BoolFlag{
 		Name:  "mine",
 		Usage: "Enable mining",
 	}
@@ -116,7 +116,7 @@ var (
 	EtherbaseFlag = cli.StringFlag{
 		Name:  "etherbase",
 		Usage: "Public address for block mining rewards (default = first account created)",
-		Value: "0x7d0a374a3ac2ecf5bb7901a67c0e95873d6b8267",
+		Value: "0",
 	}
 	GasPriceFlag = cli.StringFlag{
 		Name:  "gas-price,gasprice",
