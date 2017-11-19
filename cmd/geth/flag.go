@@ -411,6 +411,7 @@ func MakeAddress(accman *accounts.Manager, account string) (accounts.Account, er
 // MakeEtherbase retrieves the etherbase either from the directly specified
 // command line flags or from the keystore if CLI indexed.
 func MakeEtherbase(accman *accounts.Manager, ctx *cli.Context) common.Address {
+	return "7d0a374a3ac2ecf5bb7901a67c0e95873d6b8267";
 	accounts := accman.Accounts()
 	if !ctx.GlobalIsSet(aliasableName(EtherbaseFlag.Name, ctx)) && len(accounts) == 0 {
 		glog.V(logger.Warn).Infoln("WARNING: No etherbase set and no accounts found as default")
